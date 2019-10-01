@@ -9,7 +9,7 @@ import cv2
 import matplotlib.pyplot as plt
 
 import utils
-# without this some strange errors happen
+
 cv2.ocl.setUseOpenCL(False)
 random.seed(123)
 
@@ -81,9 +81,7 @@ def main():
     while True:
         ret,frame=cap.read()
        
-##       if not frame.any():
-##            log.error("Frame capture failed, stopping...")
-##            break
+
 
         # real frame number
         _frame_number += 1
@@ -96,9 +94,6 @@ def main():
         # this needed to make video from cutted frames
         frame_number += 1
 
-##        plt.imshow(frame)
-##        plt.show()
-##        return
 
         pipeline.set_context({
             'frame': frame,
